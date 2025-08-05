@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Progression Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h2>Elastic Net: Diabetes Progression Prediction</h2>
+  <form action="/predict" method="POST">
+    {% for f in features %}
+      <label>{{ f }}:</label>
+      <input type="number" step="any" name="{{ f }}" required>
+    {% endfor %}
+    <input type="submit" value="Predict">
+  </form>
+</div>
+</body>
+</html>
